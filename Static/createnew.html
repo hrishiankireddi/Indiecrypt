@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login/Signup</title>
+        <link rel="stylesheet" type="text/css" href="./loginstyles.css" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E" />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <!-- particles.js container -->
+        <canvas style="z-index: 0; position: absolute;" id="nokey" width="100px" height="100px">
+        </canvas>
+        <!-- stats - count particles -->
+        <div class="count-particles">
+          <span class="js-count-particles"></span>
+        </div>
+        <!-- particles.js lib (JavaScript CodePen settings): https://github.com/VincentGarreau/particles.js -->
+                <div class="root">
+                    <div class="top">
+                            <a class="cta" href="index.html">Home</a>                    
+                    </div>
+        
+                    <script>
+                        const timer = ms => new Promise(res => setTimeout(res, ms))
+        
+                        let expanded = false;
+        
+                        async function title(t) {
+                            var text = t.innerHTML;
+                            t.innerHTML = "";
+        
+                            for (let i = 0; i < text.length; i++) {
+                                t.innerHTML = t.innerHTML;
+                                t.innerHTML += text[i];
+                                await timer(200); // then the created Promise can be awaited
+                            }
+        
+                        }
+                        title(document.getElementById('title'))
+                    </script>
+        
+        <div class="container">
+            <form class="form" id="login_username">
+                <h1 class="form__title">Get Started!</h1>
+                <div class="form__message--error">Incorrect Username and/or Password.</div>
+                <div class="form__input-group">
+                    <input type="text" class="form__input" autofocus placeholder="Username">
+                    <div class="form__input-error-message">Error Message!</div>
+                </div>
+                <div class="form__input-group">
+                    <input type="password" class="form__input" autofocus placeholder="Password">
+                    <div class="form__input-error-message"></div>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>
